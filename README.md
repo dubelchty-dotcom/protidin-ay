@@ -111,9 +111,27 @@
     }
 
     if(page === "profile"){
-      content.innerHTML = `
-        <h2>👤 Profile</h2>
-        <p>Telegram থেকে আপনার তথ্য এখানে দেখা যাবে।</p>
+  const user = tg?.initDataUnsafe?.user;
+
+  let name = user?.first_name || "User";
+  if (user?.last_name) {
+    name += " " + user.last_name;
+  }
+
+  const username = user?.username
+    ? "@" + user.username
+    : "Username নেই";
+
+  const userId = user?.id || "ID পাওয়া যায়নি";
+
+  content.innerHTML = `
+    <h2>👤 Profile</h2>
+    <p><strong>নাম:</strong> ${name}</p>
+    <p><strong>Username:</strong> ${username}</p>
+    <p><strong>Telegram ID:</strong> ${userId}</p>
+    <p><strong>Balance:</strong> ৳0.00</p>
+  `;
+    }
       `;
     }
   }
