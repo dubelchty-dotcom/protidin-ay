@@ -21,35 +21,29 @@
       max-width: 480px;
       margin: auto;
       min-height: 100vh;
-      padding: 20px;
+      padding: 18px;
     }
 
-    .header {
+    h1 {
       text-align: center;
-      padding: 20px 0;
-    }
-
-    .header h1 {
-      margin: 0;
-      font-size: 28px;
+      margin: 15px 0 20px;
     }
 
     .balance {
-      margin-top: 20px;
+      background: #1b2030;
       padding: 25px;
       border-radius: 20px;
-      background: #1b2030;
       text-align: center;
     }
 
     .balance p {
-      margin: 0 0 8px;
       color: #aeb6c8;
+      margin: 0 0 8px;
     }
 
     .balance h2 {
       margin: 0;
-      font-size: 34px;
+      font-size: 35px;
     }
 
     .menu {
@@ -62,7 +56,7 @@
     button {
       border: 0;
       border-radius: 15px;
-      padding: 18px 10px;
+      padding: 20px 10px;
       font-size: 16px;
       color: white;
       background: #252b3b;
@@ -73,41 +67,87 @@
     }
 
     .info {
-      margin-top: 25px;
+      margin-top: 20px;
       padding: 18px;
       background: #181d29;
       border-radius: 15px;
       text-align: center;
       color: #c7ccda;
     }
+
+    #content {
+      margin-top: 20px;
+      padding: 20px;
+      background: #181d29;
+      border-radius: 15px;
+      display: none;
+    }
   </style>
 </head>
 
 <body>
 
-  <div class="app">
+<div class="app">
 
-    <div class="header">
-      <h1>💰 প্রতিদিন আয়</h1>
-    </div>
+  <h1>💰 প্রতিদিন আয়</h1>
 
-    <div class="balance">
-      <p>আপনার ব্যালেন্স</p>
-      <h2>৳0.00</h2>
-    </div>
-
-    <div class="menu">
-      <button>📋 কাজ</button>
-      <button>👥 রেফার</button>
-      <button>💸 Withdraw</button>
-      <button>👤 Profile</button>
-    </div>
-
-    <div class="info">
-      🎯 কাজ সম্পন্ন করুন এবং রিওয়ার্ড সংগ্রহ করুন।
-    </div>
-
+  <div class="balance">
+    <p>আপনার ব্যালেন্স</p>
+    <h2>৳0.00</h2>
   </div>
+
+  <div class="menu">
+    <button onclick="showPage('tasks')">📋 কাজ</button>
+    <button onclick="showPage('referral')">👥 রেফার</button>
+    <button onclick="showPage('withdraw')">💸 Withdraw</button>
+    <button onclick="showPage('profile')">👤 Profile</button>
+  </div>
+
+  <div class="info">
+    🎯 কাজ সম্পন্ন করুন এবং রিওয়ার্ড সংগ্রহ করুন।
+  </div>
+
+  <div id="content"></div>
+
+</div>
+
+<script>
+function showPage(page) {
+
+  const content = document.getElementById("content");
+
+  content.style.display = "block";
+
+  if (page === "tasks") {
+    content.innerHTML = `
+      <h2>📋 আজকের কাজ</h2>
+      <p>এখানে আপনার উপলব্ধ কাজগুলো দেখা যাবে।</p>
+      <button>🎁 কাজ শুরু করুন</button>
+    `;
+  }
+
+  if (page === "referral") {
+    content.innerHTML = `
+      <h2>👥 রেফারেল</h2>
+      <p>বন্ধুদের আমন্ত্রণ করুন এবং রেফারেল বোনাস সংগ্রহ করুন।</p>
+    `;
+  }
+
+  if (page === "withdraw") {
+    content.innerHTML = `
+      <h2>💸 Withdraw</h2>
+      <p>আপনার ব্যালেন্স থেকে Withdraw request দেওয়ার ব্যবস্থা এখানে থাকবে।</p>
+    `;
+  }
+
+  if (page === "profile") {
+    content.innerHTML = `
+      <h2>👤 Profile</h2>
+      <p>আপনার Telegram প্রোফাইলের তথ্য এখানে দেখানো হবে।</p>
+    `;
+  }
+}
+</script>
 
 </body>
 </html>
