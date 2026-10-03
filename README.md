@@ -1,35 +1,4 @@
-<!DOCTYPE html>
-<html lang="bn">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>প্রতিদিন আয়</title>
-
-  <style>
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Arial,sans-serif;
-      background:#0f1117;
-      color:white;
-    }
-    .app{
-      max-width:480px;
-      margin:auto;
-      min-height:100vh;
-      padding:18px;
-    }
-    .top{
-      text-align:center;
-      margin:15px 0 20px;
-    }
-    .top h1{margin:0 0 6px}
-    #userName{color:#aeb6c8}
-
-    .balance{
-      background:#1b2030;
-      padding:25px;
-      border-radius:20px;
+<!D
       text-align:center;
     }
     .balance p{
